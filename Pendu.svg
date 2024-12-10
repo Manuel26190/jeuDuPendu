@@ -1,0 +1,22 @@
+<svg width="176" height="232" viewBox="0 0 176 232" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="SVGPendu">
+<g id="Person">
+<g id="head">
+<path id="Vector" d="M145 81C156.046 81 165 72.0457 165 61C165 49.9543 156.046 41 145 41C133.954 41 125 49.9543 125 61C125 72.0457 133.954 81 145 81Z" fill="white" stroke="black" stroke-width="4"/>
+<g id="rEyes">
+<path id="Vector_2" d="M141.5 61C141.5 62.933 139.933 64.5 138 64.5C136.067 64.5 134.5 62.933 134.5 61C134.5 59.067 136.067 57.5 138 57.5C139.933 57.5 141.5 59.067 141.5 61Z" fill="black" stroke="black"/>
+<path id="Vector_3" d="M155.5 61C155.5 62.933 153.933 64.5 152 64.5C150.067 64.5 148.5 62.933 148.5 61C148.5 59.067 150.067 57.5 152 57.5C153.933 57.5 155.5 59.067 155.5 61Z" fill="black" stroke="black"/>
+</g>
+</g>
+<path id="armL" d="M145 101L115 121" stroke="black"/>
+<path id="armR" d="M145 101L175 121" stroke="black"/>
+<path id="legL" d="M145 131L125 171" stroke="black"/>
+<path id="legR" d="M145 131L165 171" stroke="black"/>
+<path id="Body" d="M145 81V131" stroke="black"/>
+</g>
+<path id="Base1" d="M0 231L95 231" stroke="black"/>
+<path id="Base2" d="M45 231V1" stroke="black"/>
+<path id="Base3" d="M45 1H145" stroke="black"/>
+<path id="rope" d="M145 1V41" stroke="black"/>
+</g>
+</svg>
