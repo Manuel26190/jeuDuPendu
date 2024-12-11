@@ -36,7 +36,9 @@ console.log('randomWord : ', randomWord)
 let hiddenWord = '_'.repeat(randomWord.length)
 
 pendulWord.innerHTML = hiddenWord
+
 /* Au click sur un theme cela génére un mot du tableau */
+
 const fruitsBtn = document.querySelector('.theme-fruits-btn')
 fruitsBtn.addEventListener('click', () => {
     randomWord = getRandomWord(fruits)
@@ -78,9 +80,9 @@ letterButtons.forEach((button) => {
         if (remainingTurn < 2) {
             alert('Perdu')
         }
-        if (remainingTurn > 0) {
-            remainingTurn--
-        }
+        // if (remainingTurn > 0 &&  ) {
+        //     remainingTurn--
+        // }
         if (remainingTurn < 3) {
             remainingTurnElement.style.color = 'red'
         } else if (remainingTurn < 5) {
@@ -88,16 +90,6 @@ letterButtons.forEach((button) => {
         }
         remainingTurnElement.textContent = remainingTurn
     })
-})
-/* Voire la solution */
-const solutionBtn = document.getElementById('solution-btn')
-solutionBtn.addEventListener('click', () => {
-    pendulWord.innerHTML = randomWord
-})
-/* Recharge la page pour rejouer */
-const replayBtn = document.getElementById('replay-btn')
-replayBtn.addEventListener('click', () => {
-    location.reload()
 })
 
 /*Ajouter un événement à chaque bouton*/
@@ -119,8 +111,22 @@ function checkLetter(letter, randomW) {
         }
         hiddenWord = newWord.join('')
         pendulWord.innerHTML = hiddenWord
+    } else if (remainingTurn > 0) {
+        remainingTurn--
     }
 }
+
+/* Voire la solution */
+const solutionBtn = document.getElementById('solution-btn')
+solutionBtn.addEventListener('click', () => {
+    pendulWord.innerHTML = randomWord
+})
+/* Recharge la page pour rejouer */
+const replayBtn = document.getElementById('replay-btn')
+replayBtn.addEventListener('click', () => {
+    location.reload()
+})
+
 // function checkLetter(letter) {
 //     let found = false /* lettre présente ou pas*/
 //     let randomWordArray = randomWord.split('')
