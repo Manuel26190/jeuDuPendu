@@ -118,32 +118,25 @@ function checkLetter(letter, randomW) {
 
 /* Voire la solution */
 const solutionBtn = document.getElementById('solution-btn')
-solutionBtn.addEventListener('click', () => {
-    pendulWord.innerHTML = randomWord
-})
+
+let isToggled = false // Variable pour suivre l'état
+
+function onToggle() {
+    isToggled = !isToggled // Alterne l'état
+    if (isToggled) {
+        pendulWord.innerHTML = randomWord
+        console.log('click')
+    } else {
+        pendulWord.innerHTML = hiddenWord
+        console.log('clack')
+    }
+}
+
+// Ajout de l'écouteur sur le bouton
+solutionBtn.addEventListener('click', onToggle)
+
 /* Recharge la page pour rejouer */
 const replayBtn = document.getElementById('replay-btn')
 replayBtn.addEventListener('click', () => {
     location.reload()
 })
-
-// function checkLetter(letter) {
-//     let found = false /* lettre présente ou pas*/
-//     let randomWordArray = randomWord.split('')
-//     // Vérifier chaque lettre du mot
-//     let indexFound = []
-//     for (let i = 0; i < randomWordArray.length; i++) {
-//         if (randomWordArray[i] === letter) {
-//             found = true
-//             indexFound.push(i)
-//         }
-//     }
-//     if (found) {
-//         let newWord = hiddenWord.split('')
-//         for (let y = 0; y < indexFound.length; y++) {
-//             newWord[indexFound[y]] = letter
-//         }
-//         hiddenWord = newWord.join('')
-//         pendulWord.innerHTML = hiddenWord
-//     }
-// }
