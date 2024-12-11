@@ -32,7 +32,7 @@ function getRandomWord(array) {
 }
 const pendulWord = document.getElementById('mot-a-deviner')
 let randomWord = getRandomWord(fruits)
-console.log(randomWord)
+console.log('randomWord : ', randomWord)
 let hiddenWord = '_'.repeat(randomWord.length)
 
 pendulWord.innerHTML = hiddenWord
@@ -69,7 +69,7 @@ remainingTurnElement.textContent = remainingTurn
 letterButtons.forEach((button) => {
     button.addEventListener('click', () => {
         const letter = button.textContent
-        checkLetter(letter)
+        checkLetter(letter, randomWord)
         button.disabled = true
 
         if (hiddenWord === randomWord) {
@@ -78,7 +78,6 @@ letterButtons.forEach((button) => {
         if (remainingTurn < 2) {
             alert('Perdu')
         }
-
         if (remainingTurn > 0) {
             remainingTurn--
         }
@@ -102,9 +101,9 @@ replayBtn.addEventListener('click', () => {
 })
 
 /*Ajouter un événement à chaque bouton*/
-function checkLetter(letter) {
+function checkLetter(letter, randomW) {
     let found = false /* lettre présente ou pas*/
-    let randomWordArray = randomWord.split('')
+    let randomWordArray = randomW.split('')
     // Vérifier chaque lettre du mot
     let indexFound = []
     for (let i = 0; i < randomWordArray.length; i++) {
@@ -122,3 +121,23 @@ function checkLetter(letter) {
         pendulWord.innerHTML = hiddenWord
     }
 }
+// function checkLetter(letter) {
+//     let found = false /* lettre présente ou pas*/
+//     let randomWordArray = randomWord.split('')
+//     // Vérifier chaque lettre du mot
+//     let indexFound = []
+//     for (let i = 0; i < randomWordArray.length; i++) {
+//         if (randomWordArray[i] === letter) {
+//             found = true
+//             indexFound.push(i)
+//         }
+//     }
+//     if (found) {
+//         let newWord = hiddenWord.split('')
+//         for (let y = 0; y < indexFound.length; y++) {
+//             newWord[indexFound[y]] = letter
+//         }
+//         hiddenWord = newWord.join('')
+//         pendulWord.innerHTML = hiddenWord
+//     }
+// }

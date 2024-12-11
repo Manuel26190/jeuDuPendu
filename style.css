@@ -82,6 +82,7 @@ button.letter:disabled {
 
 .remaining-turn {
     font-size: 22px;
+    margin-top: 0;
 }
 span#remaining-turn {
     font-weight: bold;
